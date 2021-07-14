@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <style>
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.btns{
+    align-self:center;
+}
+button{
+    width:100px;
+    height:30px;
+    margin-left:140px;
+    margin-right:140px;
+    cursor: pointer;
+    color:#333;
+    background: transparent;
+    border-radius: 5px;
+    font-size: large;
+    border:1px solid grey
+}
+button:hover{
+    transform: scale(1.1);
+}
+      </style>
+      <div class="wrapper">
+    <h2>JS Image Slider</h2>
+    <img src="images/img6.jpg" alt="" width="500" height="400" id="img_01" />
+    <br />
+    <br />
+   
+</div>
+    <script>
+      var x = [
+        'images/img1.jpg',
+        'images/img2.jpg',
+        'images/img3.jpg', 
+        'images/img4.jpg',
+        'images/img5.jpg',
+        'images/img6.jpg',
+        'images/img7.jpg',
+        'images/img8.jpg'
+
+      ]
+      var slide = document.getElementById('img_01')
+      //slide.src=x[1]
+      count = -1 
+      function forward() {
+        count = count + 1 
+        console.log(count)
+        if (count <= x.length) {
+          if (count === x.length) {
+            count = 0
+          }
+          slide.src = x[count]
+        }
+      }
+      setInterval(forward,3000)
+          
+     
+
+     
+    </script>
+  </body>
+</html>

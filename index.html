@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <h2>Javascript Date</h2>
+
+<p id="p1"></p>
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+<script> 
+
+function changeColor(){
+var date=new Date();
+var hour=date.getHours()
+var mins=date.getMinutes()
+var second=date.getSeconds()
+//get full time
+var timing=date.toLocaleTimeString()
+var p=document.getElementById('p1');
+p.innerHTML=timing
+//seperate seconds in odd and even numbers
+if(second % 2==0){
+    p.style.color='red'
+}else{
+    p.style.color='blue' 
+}
+
+}
+function start(){
+  clear=setInterval(() => {
+      // we handeover changeColor function to set intrval
+    changeColor()
+}, 1000);
+}
+function stop(){
+    // to stop we clear the setInterval which is assigned in clear variable
+    clearInterval(clear)
+}
+    </script>
+</body>
+</html>

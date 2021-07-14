@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Create New Html ELEMENT</h1>
+    <div id="myDiv"></div>
+    <br />
+    <input id="myInput" type="text" placeholder="type somthing" />
+    <br />
+    <br />
+    <button onclick="create()">submit</button>
+    <style>
+      #myDiv {
+        width: 200px;
+        height: 200px;
+        border: 1px pink solid;
+      }
+      input {
+        width: 25%;
+        height: 30px;
+      }
+    </style>
+    <script>
+      function create() {
+        var value = document.getElementById('myInput').value
+        // creating element
+        var element = document.createElement('p')
+        // creating textnode
+        var txt = document.createTextNode(value)
+        element.appendChild(txt)
+        var myDiv = document.getElementById('myDiv')
+        myDiv.appendChild(element)
+      }
+    </script>
+  </body>
+</html>

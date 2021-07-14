@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="full-img" id="full-imgBox">
+      <img src="" class="fullImg" alt="" />
+      <span onclick="closeImg()" id="close">X</span>
+    </div>
+    <div class="image-gallery">
+      <img src="images/img1.jpg" alt="" onclick="openImg(this.src)" />
+      <img src="images/img2.jpg" alt="" onclick="openImg(this.src)" />
+      <img src="images/img3.jpg" alt="" onclick="openImg(this.src)" />
+      <img src="images/img4.jpg" alt="" onclick="openImg(this.src)" />
+      <img src="images/img5.jpg" alt="" onclick="openImg(this.src)" />
+      <img src="images/img6.jpg" alt="" onclick="openImg(this.src)" />
+      <img src="images/img7.jpg" alt="" onclick="openImg(this.src)" />
+      <img src="images/img8.jpg" alt="" onclick="openImg(this.src)" />
+    </div>
+    <script>
+      var fullimgBox = document.querySelector('.full-img')
+      var fullImg = document.querySelector('.fullImg')
+      function openImg(pic) {
+        fullimgBox.style.display = 'flex';
+        console.log('clicked')
+        fullImg.src=pic;
+      }
+      function closeImg(){
+          var span=document.querySelector('#close')
+          fullimgBox.style.display='none';
+          
+      }
+    </script>
+  </body>
+</html>

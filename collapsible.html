@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #bedfe8;
+      }
+      .accordion {
+        max-width: 800px;
+      }
+      .accordion .contentBox {
+        position: relative;
+        margin: 10px 20px;
+      }
+      .accordion .contentBox .label {
+        position: relative;
+        padding: 10px;
+        background: #2694af;
+        color: #fff;
+        cursor: pointer;
+      }
+      .accordion .contentBox .label::before{
+          content: '+';
+          position: absolute;
+          top: 50%;
+          right:20px;
+          transform: translateY(-50%);
+          font-size: 1.5em;
+
+      }
+      .accordion .contentBox .content{
+          position: relative;
+          background: #fff;
+          height:0;
+          overflow: hidden;
+          transition: 0.5s;
+          overflow-y: auto;
+      }
+      .accordion .contentBox.active .content{
+          height:150px ;
+          padding:10px;
+      }
+      .accordion .contentBox.active .label::before{
+        content: '-';
+        font-size: 1.5em;
+      }
+    </style>
+    <div class="accordion">
+      <div class="contentBox">
+        <div class="label">List One</div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+            impedit laudantium fugit cum possimus quos unde quis expedita
+            perferendis libero explicabo ipsum? Consectetur beatae, obcaecati
+            dolores animi earum sed corrupti.
+          </p>
+        </div>
+      </div>
+      <div class="contentBox">
+        <div class="label">List Two</div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+            impedit laudantium fugit cum possimus quos unde quis expedita
+            perferendis libero explicabo ipsum? Consectetur beatae, obcaecati
+            dolores animi earum sed corrupti.
+          </p>
+        </div>
+      </div>
+      <div class="contentBox">
+        <div class="label">List Three</div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+            impedit laudantium fugit cum possimus quos unde quis expedita
+            perferendis libero explicabo ipsum? Consectetur beatae, obcaecati
+            dolores animi earum sed corrupti.
+          </p>
+        </div>
+      </div>
+      <div class="contentBox">
+        <div class="label">List Four</div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+            impedit laudantium fugit cum possimus quos unde quis expedita
+            perferendis libero explicabo ipsum? Consectetur beatae, obcaecati
+            dolores animi earum sed corrupti.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+        const accordion=document.getElementsByClassName('contentBox');
+        for(let i=0;i<accordion.length;i++){
+            accordion[i].addEventListener('click',function(){
+                this.classList.toggle('active')
+            })
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      .accordian {
+          position: relative;
+        background-color: #8fb7a5;
+        color: #fff;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: 1px solid white;
+        transition: 0.4s;
+        font: 20px Lato, sans-serif;
+        outline: none;
+      }
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+      }
+      p {
+        font: 16px Lato, sans-serif;
+      }
+      .active,.accordian:hover{
+          background-color: #527E6A;
+
+      }
+      .accordian.active::after{
+          content:'-';
+          
+      }
+      .accordian::after{
+        content: '+';
+          position: absolute;
+          top: 50%;
+          right:20px;
+          transform: translateY(-50%);
+          font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="accordian">Section 1</button>
+    <div class="panel">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+        tenetur maxime quidem nesciunt adipisci reprehenderit qui inventore
+        nihil alias, hic dolorem impedit beatae animi ipsam.
+      </p>
+    </div>
+    <button class="accordian">Section 2</button>
+    <div class="panel">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+        tenetur maxime quidem nesciunt adipisci reprehenderit qui inventore
+        nihil alias, hic dolorem impedit beatae animi ipsam.
+      </p>
+    </div>
+    <button class="accordian">Section 3</button>
+    <div class="panel">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+        tenetur maxime quidem nesciunt adipisci reprehenderit qui inventore
+        nihil alias, hic dolorem impedit beatae animi ipsam.
+      </p>
+    </div>
+    <script>
+      var acc = document.getElementsByClassName('accordian')
+      var i
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener('click', function () {
+          // Toggle between adding and removing the active class to highlight the button that controls the panel
+          this.classList.toggle('active')
+          // toggle between hiding and showing the active panel
+          var panel=this.nextElementSibling;
+          if(panel.style.display === 'block'){
+              panel.style.display ='none'
+          }else{
+              panel.style.display='block'
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

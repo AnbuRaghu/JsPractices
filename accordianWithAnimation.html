@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+       
+      .accordian {
+        background-color: #8fb7a5;
+        color: #fff;
+        cursor: pointer;
+        padding: 18px;
+        width: 60%;
+        text-align: left;
+        border: 1px solid white;
+        transition: 0.4s;
+        font: 20px Lato, sans-serif;
+        outline: none;
+       
+      }
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+      }
+      p {
+        font: 16px Lato, sans-serif;
+        width: 60%;
+      }
+      .active,.accordian:hover{
+          background-color: #527E6A;
+
+      }
+      .accordian:after{
+          content: '+';
+          font-size: 15px;
+          float:right;
+          margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+      
+    <button class="accordian">Section 1</button>
+    <div class="panel">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+        tenetur maxime quidem nesciunt adipisci reprehenderit qui inventore
+        nihil alias, hic dolorem impedit beatae animi ipsam.
+      </p>
+    </div>
+    <button class="accordian">Section 2</button>
+    <div class="panel">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+        tenetur maxime quidem nesciunt adipisci reprehenderit qui inventore
+        nihil alias, hic dolorem impedit beatae animi ipsam.
+      </p>
+    </div>
+    <button class="accordian">Section 3</button>
+    <div class="panel">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+        tenetur maxime quidem nesciunt adipisci reprehenderit qui inventore
+        nihil alias, hic dolorem impedit beatae animi ipsam.
+      </p>
+   
+</div>
+    <script>
+      var acc = document.getElementsByClassName('accordian')
+      var i;
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener('click', function () {
+          this.classList.toggle('active')
+          // toggle between hiding and showing the active panel
+          var panel=this.nextElementSibling;
+          if(panel.style.maxHeight){
+              panel.style.maxHeight=null;
+          }else{
+              panel.style.maxHeight=panel.scrollHeight + 'px'
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
