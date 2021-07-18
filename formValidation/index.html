@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="contact-us">
+      <h1>
+        Contact US
+      </h1>
+      <p>We'd Llove to hear from you Please send us a message</p>
+    </div>
+    <form action="">
+      <div class="form-group">
+        <label for="">Full Name</label>
+        <input type="text" placeholder="Your full name" name="name" />
+        <div class="error-hint hidden">Your name is required</div>
+      </div>
+      <div class="form-group">
+        <label for="">Email</label>
+        <input type="text" placeholder="Your Email" name="email" />
+        <div class="error-hint hidden">Your email is required</div>
+      </div>
+      <div class="form-group">
+        <label for="">Phone</label>
+        <input type="text" placeholder="Your Phone" name="phone" />
+        <div class="error-hint hidden">Your Phone is required</div>
+      </div>
+      <div class="form-group">
+        <label for="">Message</label>
+        <textarea placeholder="Your Message" name="msg"></textarea>
+        <div class="error-hint hidden">Your message is required</div>
+      </div>
+
+      <hr />
+      <button>Submit</button>
+    </form>
+    <div class="thank-you hidden">Thank you for your feedback</div>
+    <script src="app.js"></script>
+  </body>
+</html>

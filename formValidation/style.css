@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+.contact-us {
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 114, 66) 0%,
+    rgb(4, 109, 91) 100%
+  );
+  color: white;
+  padding: 40px;
+}
+
+form {
+  padding: 40px;
+}
+.form-group label {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.form-group input {
+  width: 320px;
+  padding: 10px;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 4px;
+}
+input.invalid {
+  border: 1px solid red;
+}
+textarea.invalid {
+    border: 1px solid red;
+  }
+.error-hint {
+  color: red;
+}
+hr {
+  height: 1px;
+  background-color: green;
+  border: none;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+button {
+  padding: 10px;
+  font-size: 20px;
+  background: none;
+  border: 1px solid green;
+  border-radius: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+button:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 114, 66) 0%,
+    rgb(4, 109, 91) 100%
+  );
+  color: white;
+}
+.hidden {
+  display: none;
+}
+.thank-you {
+  padding: 40px;
+  font-size: 32px;
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+textarea {
+  width: 560px;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+  height: 200px;
+  font-size: 18px;
+}
